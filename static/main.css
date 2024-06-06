@@ -1,0 +1,30 @@
+body {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main_container {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  align-items: center;
+}
+
+.main_title {
+  font-weight: normal;
+}
+.main_title span {
+  font-weight: bold;
+}
+
+.main_button {
+  width: 12.5rem;
+  height: 2.5rem;
+}
+
+.main_content {
+  font-weight: normal;
+}

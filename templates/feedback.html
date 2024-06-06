@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link type="text/css" rel="stylesheet" href="../static/feedback.css" />
+    <title>식단 피드백 받기</title>
+  </head>
+  <body>
+    <div class="feedback_container">
+      <h1 class="feedback_title">나의 식단 <span>피드백</span> 받기</h1>
+      <div class="feedback_box">
+        <h3>식단 입력하기</h3>
+        <form method="post" action="/feedback">
+          <table>
+            <tr>
+              <th>아침</th>
+              <td><input type="text" name="morning" /></td>
+            </tr>
+            <tr>
+              <th>점심</th>
+              <td><input type="text" name="lunch" /></td>
+            </tr>
+            <tr>
+              <th>저녁</th>
+              <td><input type="text" name="dinner" /></td>
+            </tr>
+          </table>
+          <button class="feedback_button" type="submit">피드백 받기</button>
+        </form>
+      </div>
+      <div class="feedback_result">
+        <h2>피드백 결과</h2>
+        <p>"{{ feedback }}"</p>
+      </div>
+      <a href="/"><button class="feedback_button">처음으로</button></a>
+    </div>
+  </body>
+</html>
