@@ -20,6 +20,10 @@ body {
   font-weight: bold;
 }
 
+.main_buttonGroup {
+  display: flex;
+  gap: 2rem;
+}
 .main_button {
   width: 12.5rem;
   height: 2.5rem;
