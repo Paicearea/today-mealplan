@@ -1,0 +1,57 @@
+body {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 2rem;
+}
+
+.form_title {
+  font-weight: normal;
+  margin: 0;
+}
+.form_title span {
+  font-weight: bold;
+}
+
+.form_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form_table {
+  width: 100%;
+}
+.form_table td {
+  padding: 1rem;
+}
+.form_table td:first-child {
+  text-align: right;
+  font-size: 1.25rem;
+  padding: 1rem 2rem;
+}
+input[type='text'] {
+  width: 7rem;
+}
+label {
+  vertical-align: middle;
+}
+.allergy label {
+  padding-right: 1rem;
+}
+
+.form_button {
+  width: 12.5rem;
+  height: 2.5rem;
+  margin-top: 2.5rem;
+}

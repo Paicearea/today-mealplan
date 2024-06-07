@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link type="text/css" rel="stylesheet" href="../static/form.css" />
+    <title>정보 입력 화면</title>
+  </head>
+  <body>
+    <div class="form_container">
+      <h1 class="form_title">나의 정보를 <span>입력</span>해주세요!</h1>
+      <form class="form_form" method="POST" action="/form">
+        <table class="form_table">
+          <tr>
+            <td>만 나이</td>
+            <td colspan="3"><input name= "age" type="text" /></td>
+          </tr>
+          <tr>
+            <td>성별</td>
+            <td>
+              <label
+                ><input type="radio" value="male" name="gender" /> 남</label
+              >
+            </td>
+            <td>
+              <label
+                ><input type="radio" value="female" name="gender" /> 여</label
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>키</td>
+              <td colspan="3"><input name="height" type="text" /></td>
+          </tr>
+          <tr>
+            <td>체중</td>
+            <td colspan="3"><input name="weight" type="text" /></td>
+          </tr>
+          <tr>
+            <td>활동 수준</td>
+            <td>
+              <label
+                ><input type="radio" value="sedentary" name="activity" /> 앉아
+                있는생활</label
+              >
+            </td>
+            <td>
+              <label
+                ><input type="radio" value="light" name="activity" /> 약간
+                의 운동</label
+              >
+            </td>
+            <td>
+              <label
+                ><input type="radio" value="moderate" name="activity" /> 중간수준 
+                의 운동</label
+              >
+            </td>
+            <td>
+              <label
+                ><input type="radio" value="active" name="activity" /> 고강도의 
+                운동</label
+              >
+            </td>
+            <td>
+              <label
+                ><input type="radio" value="very_active" name="activity" /> 매우 
+                고강도의 운동</label
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>목표</td>
+            <td>
+              <label
+                ><input type="radio" value="1" name="goal" /> 체중 감량</label
+              >
+            </td>
+            <td>
+              <label
+                ><input type="radio" value="2" name="goal" /> 체중 유지</label
+              >
+            </td>
+            <td>
+              <label
+                ><input type="radio" value="3" name="goal" /> 체중 증가</label
+              >
+            </td>
+          </tr>
+        </table>
+        <button class="form_button">제출하기</button>
+      </form>
+    </div>
+  </body>
+</html>

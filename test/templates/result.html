@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link type="text/css" rel="stylesheet" href="../static/result.css" />
+    <title>식단 결과 화면</title>
+  </head>
+  <body>
+    <div class="result_container">
+      <h1 class="result_title">나의 <span>투데이</span> 확인하기</h1>
+      <h3>당신의 bmr(기초대사량)은 {{ bmr }} kcal 입니다.</h3>
+      <p>
+        bmr을 기반으로 한 TDEE는 <br />
+        <span>{{ tdee }} kcal</span> 입니다!
+      </p>
+      <form action="/generate_meal_plan" method="post">
+        <input type="hidden" name="tdee" value="{{ total_tdee }}" />
+        <input type="hidden" name="bmr" value="{{ bmr }}" />
+        <button type="submit" class="result_button">AI 식단 추천</button>
+      </form>
+      <button class="result_button" onclick="window.location.href='/feedback'">
+        식단 피드백 받기
+      </button>
+    </div>
+  </body>
+</html>
