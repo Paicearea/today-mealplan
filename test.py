@@ -129,7 +129,7 @@ def feedback():
         lunch = request.form.get('lunch')
         dinner = request.form.get('dinner')
         
-        activity_labels = {'1': '앉아 있는 생활', '2': '약간의 운동', '3': '중간 수준의 운동', '4': '고강도의 운동', '5': '매우 고강도의 운동'}
+        activity_labels = {'sedentary': '앉아 있는 생활', 'light': '약간의 운동', 'moderate': '중간 수준의 운동', 'active': '고강도의 운동', 'very_active': '매우 고강도의 운동'}
         goal_labels = {'1': '체중 감량', '2': '체중 유지', '3': '체중 증가'}
 
         activity_text = activity_labels.get(activity, '알 수 없음')
