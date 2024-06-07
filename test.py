@@ -11,6 +11,14 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 def main():
     return render_template('main.html')
 
+@app.route('/form_meal', methods=['GET'])
+def form_meal():
+    return render_template('form.html', form_method="post", form_action="/form")
+
+@app.route('/form_feedback', methods=['GET'])
+def form_feedback():
+    return render_template('form.html', form_method="get", form_action="/feedback")
+
 @app.route('/form', methods=['GET', 'POST'])
 def info():
     if request.method == 'POST':
@@ -111,27 +119,24 @@ def generate_meal_plan_route():
 def feedback():
       if request.method == 'POST':
         # 사용자가 입력한 데이터 수집
-        age = request.form.get('age')
-        gender = request.form.get('gender')
-        height = request.form.get('height')
-        weight = request.form.get('weight')
-        activity = request.form.get('activity')
-        goal = request.form.get('goal')
-        allergies = request.form.getlist('allergy')
+        age = request.args.get('age')
+        gender = request.args.get('gender')
+        height = request.args.get('height')
+        weight = request.args.get('weight')
+        activity = request.args.get('activity')
+        goal = request.args.get('goal')
         morning = request.form.get('morning')
         lunch = request.form.get('lunch')
         dinner = request.form.get('dinner')
         
-        activity_labels = {'1': '주로 앉아있음', '2': '보통', '3': '활동량 많음'}
+        activity_labels = {'sedentary': '앉아 있는 생활', 'light': '약간의 운동', 'moderate': '중간 수준의 운동', 'active': '고강도의 운동', 'very_active': '매우 고강도의 운동'}
         goal_labels = {'1': '체중 감량', '2': '체중 유지', '3': '체중 증가'}
-        allergy_labels = {'1': '생선', '2': '땅콩', '3': '우유', '4': '계란'}
 
         activity_text = activity_labels.get(activity, '알 수 없음')
         goal_text = goal_labels.get(goal, '알 수 없음')
-        allergies_text = ', '.join([allergy_labels.get(a, '알 수 없음') for a in allergies])
 
         # 사용자 입력을 기반으로 GPT-3.5에 전달할 프롬프트 생성
-        user_info = f"나이: {age}, 성별: {gender}, 키: {height}cm, 체중: {weight}kg, 활동 수준: {activity_text}, 목표: {goal_text}, 알레르기: {allergies_text}"
+        user_info = f"나이: {age}, 성별: {gender}, 키: {height}cm, 체중: {weight}kg, 활동 수준: {activity_text}, 목표: {goal_text}"
         diet_info = f"아침: {morning}, 점심: {lunch}, 저녁: {dinner}"
 
         System_Role = "이 사용자의 식단에 대해 구체적이고 실용적인 조언을 해주세요."
@@ -152,8 +157,17 @@ def feedback():
 
         # 피드백 결과를 피드백 페이지에 전달
         return render_template('feedback.html', feedback=feedback_content)
+      
+      else:
+        age = request.args.get('age')
+        gender = request.args.get('gender')
+        height = request.args.get('height')
+        weight = request.args.get('weight')
+        activity = request.args.get('activity')
+
+        return render_template('feedback.html', age=age, gender=gender, height=height, weight=weight, activity=activity)
     
-      return render_template('feedback.html')
+      
 
 if __name__ == '__main__':
     app.run(debug=True)

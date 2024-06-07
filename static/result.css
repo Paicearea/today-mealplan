@@ -48,6 +48,10 @@ body {
   padding: 0.5rem 1rem;
 }
 
+.result_buttonGroup {
+  display: flex;
+  gap: 2rem;
+}
 .result_button {
   width: 12.5rem;
   height: 2.5rem;

@@ -8,11 +8,11 @@
   <body>
     <div class="form_container">
       <h1 class="form_title">나의 정보를 <span>입력</span>해주세요!</h1>
-      <form class="form_form" method="POST" action="/form">
+      <form class="form_form" method="{{form_method}}" action="{{form_action}}">
         <table class="form_table">
           <tr>
             <td>만 나이</td>
-            <td colspan="3"><input name= "age" type="text" /></td>
+            <td colspan="3"><input name="age" type="text" /></td>
           </tr>
           <tr>
             <td>성별</td>
@@ -29,7 +29,7 @@
           </tr>
           <tr>
             <td>키</td>
-              <td colspan="3"><input name="height" type="text" /></td>
+            <td colspan="3"><input name="height" type="text" /></td>
           </tr>
           <tr>
             <td>체중</td>
@@ -45,25 +45,25 @@
             </td>
             <td>
               <label
-                ><input type="radio" value="light" name="activity" /> 약간
-                의 운동</label
-              >
-            </td>
-            <td>
-              <label
-                ><input type="radio" value="moderate" name="activity" /> 중간수준 
-                의 운동</label
-              >
-            </td>
-            <td>
-              <label
-                ><input type="radio" value="active" name="activity" /> 고강도의 
+                ><input type="radio" value="light" name="activity" /> 약간 의
                 운동</label
               >
             </td>
             <td>
               <label
-                ><input type="radio" value="very_active" name="activity" /> 매우 
+                ><input type="radio" value="moderate" name="activity" />
+                중간수준의 운동</label
+              >
+            </td>
+            <td>
+              <label
+                ><input type="radio" value="active" name="activity" /> 고강도의
+                운동</label
+              >
+            </td>
+            <td>
+              <label
+                ><input type="radio" value="very_active" name="activity" /> 매우
                 고강도의 운동</label
               >
             </td>
@@ -84,24 +84,6 @@
               <label
                 ><input type="radio" value="3" name="goal" /> 체중 증가</label
               >
-            </td>
-          </tr>
-          <tr class="allergy">
-            <td>알레르기</td>
-            <td colspan="3">
-              <label
-                ><input type="checkbox" value="1" name="allergy" />생선</label
-              >
-              <label
-                ><input type="checkbox" value="2" name="allergy" />땅콩</label
-              >
-              <label
-                ><input type="checkbox" value="3" name="allergy" />우유</label
-              >
-              <label
-                ><input type="checkbox" value="4" name="allergy" />계란</label
-              >
-              <label>그 외 <input type="text" name="allergy" /></label>
             </td>
           </tr>
         </table>
